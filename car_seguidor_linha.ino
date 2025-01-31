@@ -11,7 +11,7 @@
 #define pinMotorE2 4
 
 //Definição da variável de velocidade
-#define velocidade = 70
+#define velocidade 70
 
 void setup() {
   //Os pinos dos sensonres apontados como ENTRADA
@@ -31,7 +31,7 @@ void loop() {
   int leitorD = digitalRead(pinSensorD);
 
   //Caso os dois sensores de linha detectem a linha (ambos os sensores na linha)
-  if (leitorE == LOW && leitorD == LOW) {
+  if (leitorE && leitorD) {
     //motor 1
     digitalWrite(pinMotorD1, velocidade);
     digitalWrite(pinMotorD2, LOW);
@@ -40,7 +40,7 @@ void loop() {
     digitalWrite(pinMotorE2, LOW);
   }
   //Caso Caso o sensor da esquerda detecte a linha (ajustar para a esquerda)
-  else if (leitorE == LOW && leitorD == HIGH) {
+  else if (leitorE && leitorD) {
     //motor 1
     digitalWrite(pinMotorD1, LOW);
     digitalWrite(pinMotorD2, velocidade);
@@ -49,7 +49,7 @@ void loop() {
     digitalWrite(pinMotorE2, LOW);
   }
   // Caso o sensor da direita detecte a linha (ajustar para a direita)
-  else if (leitorE == HIGH && leitorD == LOW) {
+  else if (leitorE && leitorD) {
     //motor 1
     digitalWrite(pinMotorD1, velocidade);
     digitalWrite(pinMotorD2, LOW);
