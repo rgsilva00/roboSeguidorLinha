@@ -13,7 +13,7 @@
 //Definição da variável de velocidade
 #define velocidade_reta 70   //Velocidade em linha reta
 #define velocidade_curva 35  //Velocidade em curvas
-#define velocidade_min 15     //Velocidade mínima para curvas fechadas
+#define velocidade_min 15    //Velocidade mínima para curvas fechadas
 
 void setup() {
   //Os pinos dos sensonres apontados como ENTRADA
@@ -25,9 +25,6 @@ void setup() {
   pinMode(pinMotorD2, OUTPUT);
   pinMode(pinMotorE1, OUTPUT);
   pinMode(pinMotorE2, OUTPUT);
-
-  // Inicializa a comunicação serial para debug
-  Serial.begin(9600);
 }
 
 void loop() {
